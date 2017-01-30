@@ -20,6 +20,7 @@ Name: Linux host autoregistration
 Conditions: Host metadata like Linux
 Operations: Link to templates: Template OS Linux
 You can skip an “Add host” operation in this case. Linking to a template requires adding a host first so the server will do that automatically.
+
 The second action:
 
 Name: Windows host autoregistration
