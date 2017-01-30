@@ -6,9 +6,9 @@ Param(
 )
 
 $zabbixService = "Zabbix Agent"
-$zabbixHome = "C:\zabbix"
 
 foreach ($computer in $computerName){
+    $zabbixHome = "\\$computer\c$\zabbix"
 
     #See if computer is reachable
     try {

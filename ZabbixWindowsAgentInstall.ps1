@@ -9,12 +9,11 @@ Param(
 
 $zabbixService = "Zabbix Agent"
 $zabbixSource = "$zabbixPath\$zabbixVersion"
-$zabbixHome = "C:\zabbix"
 $zabbixServerIP = "10.0.0.178"
 
 
 foreach ($computer in $computerName){
-
+    $zabbixHome = "\\$computer\c$\zabbix"
     # Create Zabbix Home folder
     if ((Test-Path -Path $zabbixHome) -eq $false)
     {
