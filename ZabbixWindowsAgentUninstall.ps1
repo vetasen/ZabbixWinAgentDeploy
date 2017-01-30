@@ -5,7 +5,7 @@ Param(
 	[array]$computerName
 )
 
-$zabbixService = "Zabbix AgentT"
+$zabbixService = "Zabbix Agent"
 $zabbixHome = "C:\zabbix"
 
 foreach ($computer in $computerName){
@@ -54,6 +54,9 @@ foreach ($computer in $computerName){
     $remoteWMI = Invoke-WMIMethod -Class Win32_Process -Name Create -Computername $computer -ArgumentList $uninstallString
     sleep -seconds 3
     Remove-Item $zabbixHome -Recurse
+    write-host "----------------------------------------------------------------------------------------"
+    write-host "Service stopped, deleted and folder removed. Logfile will still exist under C:\"
+    write-host "----------------------------------------------------------------------------------------"
 
 
 } #End foreach
