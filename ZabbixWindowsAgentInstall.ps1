@@ -42,7 +42,8 @@ foreach ($computer in $computerName){
          $_ -replace "Server=127.0.0.1","Server=$zabbixServerIP" `
             -replace "LogFile=c:\zabbix_agentd.log","LogFile=c:\zabbix\zabbix_agentd.log" `
             -replace "ServerActive=127.0.0.1","ServerActive=$zabbixServerIP" `
-            -replace "Hostname=","Hostname=$Computer"
+            -replace "Hostname=","Hostname=$Computer" `
+            -replace "# HostMetadataItem=","HostMetadataItem=system.uname"
             } | set-content $newConfig
 
     # Creating installer and servicestrings
